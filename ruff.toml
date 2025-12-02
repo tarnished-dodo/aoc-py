@@ -1,0 +1,23 @@
+line-length = 120
+
+# https://beta.ruff.rs/docs/rules
+lint.select = ["I", "B", "F", "E", "W", "N", "C4", "ARG", "PL", "RUF"]
+
+lint.ignore = [
+  "PLR0911", # [Too many return statements]: Not worth the effort
+  "PLR0912", # [Too many branches]: Not worth the effort
+  "PLR0913", # [Too many args in function definition]: Not worth the effort
+  "PLR0915", # [Too many statements]: Not worth the effort
+  "PLR2004", # [Magic value used in comparison]: Not worth the effort
+  "PLW2901", # [Loop var overwritten by assignment target]: Seems okay if you use it correctly
+]
+
+exclude = ["Python"]
+
+[lint.per-file-ignores]
+"tests/*" = ["ARG001"]
+
+
+[lint.flake8-import-conventions.aliases]
+"timoc.api.services.ApplicationCommandControlService" = "ACCS"
+"timoc.api.services.SystemCommandControlService" = "SCCS"
